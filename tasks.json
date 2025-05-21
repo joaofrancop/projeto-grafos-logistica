@@ -1,0 +1,28 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Build Graph Project",
+      "type": "shell",
+      "command": "mingw32-make",
+      "options": {
+        "cwd": "${workspaceFolder}/Files"
+      },
+      "problemMatcher": [],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    },
+    {
+      "label": "Run Graph Project",
+      "type": "shell",
+      "command": "./output/main.exe",
+      "options": {
+        "cwd": "${workspaceFolder}/Files"
+      },
+      "problemMatcher": [],
+      "dependsOn": "Build Graph Project"
+    }
+  ]
+}
