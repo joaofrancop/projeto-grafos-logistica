@@ -10,6 +10,6 @@ int main(){
 
 printf("ola");
 
-return 0;
+return 0;
 
 }
