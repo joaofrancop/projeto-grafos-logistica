@@ -15,9 +15,9 @@ typedef struct Vertice {
 typedef struct Grafo {
     int numVertices;
     Vertice* vertices;
-    int** matrizAdjacencia;
 } Grafo;
 
+// Funções principais
 Grafo* criarGrafo(int numVertices);
 void adicionarAresta(Grafo* grafo, int origem, int destino, int peso);
 void imprimirGrafo(Grafo* grafo);

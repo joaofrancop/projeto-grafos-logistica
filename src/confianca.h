@@ -3,9 +3,11 @@
 
 typedef struct Fornecedor {
     int id;
-    float confianca; // 0.0 a 1.0
+    const char* nome;
+    float confianca;  // de 0.0 a 1.0
+    float preco;      // valor cobrado pelo item
 } Fornecedor;
 
-float getConfiancaFornecedor(int id);
+Fornecedor escolherFornecedorConfiavel(Fornecedor lista[], int tamanho);
 
 #endif
