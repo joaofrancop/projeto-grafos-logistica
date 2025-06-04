@@ -3,6 +3,7 @@
 
 #include "grafo.h"
 
-void ordenacaoTopologica(Grafo* grafo, int* resultado);
+// producao.h
+void ordenacaoTopologica(Grafo* grafo);
 
-#endif
+#endif 
