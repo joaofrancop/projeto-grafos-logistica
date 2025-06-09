@@ -22,5 +22,6 @@ Grafo* criarGrafo(int numVertices);
 void adicionarAresta(Grafo* grafo, int origem, int destino, int peso);
 void imprimirGrafo(Grafo* grafo);
 void liberarGrafo(Grafo* grafo);
+void a_estrela(Grafo* grafo, int inicio, int fim);
 
 #endif
