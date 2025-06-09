@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include "grafo.h"
+#include <windows.h>
 
 int main() {
     // Cria o grafo com 6 vértices (0 a 5)
@@ -24,5 +25,13 @@ int main() {
 
     // Libera memória
     liberarGrafo(g);
+    
+
+    SetConsoleOutputCP(65001);  // saída (printf)
+    SetConsoleCP(65001);        // entrada (scanf)
+
+    exibirMenu();
+
+
     return 0;
 }
