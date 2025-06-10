@@ -3,30 +3,31 @@
 #include "producao.h"
 #include "confianca.h"
 
-void exibirMenu() {
+void exibirMenu(Grafo* g) {
     int opcao;
 
     do {
         printf("\n== MENU PRINCIPAL ==\n");
         printf("1. Mostrar ordem de montagem\n");
         printf("2. Escolher fornecedor mais confiável\n");
+        printf("3. Buscar menor caminho com A*\n");
         printf("0. Sair\n");
         printf("Digite sua opção: ");
         scanf("%d", &opcao);
 
         switch (opcao) {
             case 1: {
-                Grafo* grafo = criarGrafo(6);
-                adicionarAresta(grafo, 0, 1, 1);
-                adicionarAresta(grafo, 1, 2, 1);
-                adicionarAresta(grafo, 0, 3, 1);
-                adicionarAresta(grafo, 2, 4, 1);
-                adicionarAresta(grafo, 3, 4, 1);
-                adicionarAresta(grafo, 4, 5, 1);
+                Grafo* grafoMontagem = criarGrafo(6);
+                adicionarAresta(grafoMontagem, 0, 1, 1);
+                adicionarAresta(grafoMontagem, 1, 2, 1);
+                adicionarAresta(grafoMontagem, 0, 3, 1);
+                adicionarAresta(grafoMontagem, 2, 4, 1);
+                adicionarAresta(grafoMontagem, 3, 4, 1);
+                adicionarAresta(grafoMontagem, 4, 5, 1);
 
                 printf("\n== ORDEM DE MONTAGEM - MONTADORA DE CARROS ==\n");
-                ordenacaoTopologica(grafo);
-                liberarGrafo(grafo);
+                ordenacaoTopologica(grafoMontagem);
+                liberarGrafo(grafoMontagem);
                 break;
             }
             case 2: {
@@ -40,6 +41,18 @@ void exibirMenu() {
                 Fornecedor escolhido = escolherFornecedorConfiavel(fornecedores, qtd);
                 printf("\nFornecedor escolhido: %s\n", escolhido.nome);
                 printf("Confiança: %.2f | Preço: R$ %.2f\n", escolhido.confianca, escolhido.preco);
+                break;
+            }
+            case 3: {
+                printf("\nGrafo:\n");
+                imprimirGrafo(g);  // <-- Aqui!
+                
+                int origem, destino;
+                printf("Digite o vértice de origem: ");
+                scanf("%d", &origem);
+                printf("Digite o vértice de destino: ");
+                scanf("%d", &destino);
+                a_estrela(g, origem, destino);
                 break;
             }
             case 0:
