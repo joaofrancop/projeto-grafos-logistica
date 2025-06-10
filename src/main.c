@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include "interface.h"
 #include "grafo.h"
 #include <windows.h>
 
