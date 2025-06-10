@@ -1,6 +1,7 @@
 #ifndef INTERFACE_H
 #define INTERFACE_H
+#include "grafo.h"
 
-void exibirMenu();
+void exibirMenu(Grafo* g);
 
 #endif
